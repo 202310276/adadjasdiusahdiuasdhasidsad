@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+}
+
+.orange-background {
+  background-color: orange;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-background {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+}
+
+nav {
+  background-color: #808080;
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: orange;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+  left: 0;
+  top: 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+  color: white;
+  border-right: 5px solid orange;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.sub-product {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+.dropdown:hover .sub-product {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+  </style>
+</head>
+<body>
+
+  <div class="orange-background">
+    <div class="white-background">
+      <nav>
+        <a href="#">Home</a>
+        <div class="dropdown">
+          <a id="product1" href="#">Products <span class="arrow">&#9660;</span></a>
+          <div class="dropdown-content">
+            <a href="#">Product 1</a>
+            <a href="#">Product 2</a>
+          </div>
+          <div class="dropdown-content sub-product">
+            <a href="#">Sub Product 1</a>
+            <a href="#">Sub Product 2</a>
+          </div>
+        </div>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+</body>
+</html>
